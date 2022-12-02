@@ -1,0 +1,55 @@
+
+<html>
+  <head>
+    <title>AI Password Generator</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      #password-container {
+        padding: 20px;
+        background-color: #eee;
+        text-align: center;
+      }
+      #password-input {
+        width: 250px;
+        height: 30px;
+        font-size: 20px;
+        border: 0px;
+        padding: 10px;
+        background-color: #ddd;
+        margin-bottom: 10px;
+      }
+      #generate-password-btn {
+        background-color: #999;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px;
+        border: 0px;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="password-container">
+      <input type="text" id="password-input" placeholder="Generated Password" readonly>
+      <button id="generate-password-btn">Generate Password</button>
+    </div>
+    <script>
+      const generatePasswordBtn = document.getElementById('generate-password-btn');
+      const passwordInput = document.getElementById('password-input');
+
+      generatePasswordBtn.addEventListener('click', () => {
+        // AI Algorithm to generate a secure password
+        let password = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for (let i = 0; i < 10; i++) {
+          const randomNum = Math.floor(Math.random() * characters.length);
+          password += characters.charAt(randomNum);
+        }
+        passwordInput.value = password;
+      });
+    </script>
+  </body>
+</html>
